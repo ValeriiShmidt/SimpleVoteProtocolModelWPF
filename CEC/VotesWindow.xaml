@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CEC"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="MainWindow" Height="450" Width="800">
+        Title="VotesWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
