@@ -1,0 +1,56 @@
+﻿<Window x:Class="CEC.PersonsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CEC"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="PersonsWindow" Width="500" Height="240">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="60" />
+            <Setter Property="Margin" Value="8" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Ім'я" />
+        <TextBlock Text="Прізвище" Grid.Row="1" />
+        <TextBlock Text="Роль" Grid.Row="2" />
+        <TextBlock Text="Дозвіл голосувати" Grid.Row="3" />
+
+        <TextBox Name="TextBoxName" Grid.Column="1" />
+        <TextBox Name="TextBoxSurname" Grid.Column="1" Grid.Row="1" />
+        <ComboBox Name="Role" Grid.Column="1" Grid.Row="2" Height="20" Width="200" HorizontalAlignment="Left" Margin="8">
+            <ComboBoxItem IsSelected="True" Content="Виборець"></ComboBoxItem>
+            <ComboBoxItem Content="Кандидат"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="Permission" Grid.Column="1" Grid.Row="3" Height="20" Width="200" HorizontalAlignment="Left" Margin="8">
+            <ComboBoxItem IsSelected="True" Content="Не може голосувати" ></ComboBoxItem>
+            <ComboBoxItem Content="Може голосувати" ></ComboBoxItem>
+        </ComboBox>
+        
+        
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button IsDefault="True" Click="AddClick" >Додати</Button>
+            <Button IsCancel="True" >Відміна</Button>
+        </StackPanel>
+    </Grid>
+</Window>

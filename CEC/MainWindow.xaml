@@ -1,0 +1,35 @@
+﻿<Window x:Class="CEC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CEC"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ListBox x:Name="personsList" ItemsSource="{Binding}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="16" />
+                        <TextBlock Text="{Binding Surname}" FontSize="16" />
+                        <TextBlock Text="{Binding Role}" FontSize="16" />
+                        <TextBlock Text="{Binding Permission}" FontSize="16" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Додати" Margin="10" Click="AddClick" Width="60"/>
+            <Button Content="Видалити" Margin="10" Click="DeleteClick" Width="60"/>
+            <Button Content="Оновити" Margin="10" Click="UpdateClick" Width="60"/>
+            <Button Content="Переглянути голоси" Margin="10" Click="VotesClick" Width="120"/>
+            <Button Content="Результати" Margin="10" Click="ResultsClick" Width="80"/>
+        </StackPanel>
+    </Grid>
+</Window>
